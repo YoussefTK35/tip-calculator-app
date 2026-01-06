@@ -8,37 +8,54 @@
   
   <title>Frontend Mentor | Tip calculator app</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
 <body>
+  <header>
+    <img src="/images/logo.svg">
+  </header>
 
-  Bill
+  <div class="container">
+    <div class="interactive-container">
+      <label for="bill-input">Bill</label><br>
+      <input type="number" id="bill-input">
+      <img src="/images/icon-dollar.svg" alt="dollar">
 
-  Select Tip %
-  5%
-  10%
-  15%
-  25%
-  50%
-  Custom
+      <label for="tip-input">Select Tip %</label>
+      <div class="tips-grid-container">
+        <button class="tip">5%</button>
+        <button class="tip">10%</button>
+        <button class="tip">15%</button>
+        <button class="tip">25%</button>
+        <button class="tip">50%</button>
+        <input type="number" id="tip-input">
+      </div>
 
-  Number of People
+      <div class="people-number-container">
+        <label for="num-people-input">Number of People</label>
+        <p class="error-num-people">Can't be zero</p>
+      </div>
+      <input type="number" id="num-people-input">
+      <img src="/images/icon-person.svg">
+    </div>
 
-  Tip Amount
-  / person
 
-  Total
-  / person
-
-  Reset
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    <div class="results-container">
+      <div class="tip-amount-container">
+        <div>
+          <p class="tip-para">Tip Amount</p>
+          <p>/ person</p>
+        </div>
+        <h1 id="tip-amount">$0.00</h1>
+      </div>
+      <div class="tip-amount-container">
+        <div>
+          <p class="tip-para">Total</p>
+          <p>/ person</p>
+        </div>
+        <h1 id="total-amount">$0.00</h1>
+      </div>
+      <button id="reset">RESET</button>
+    </div>
   </div>
 </body>
 </html>
