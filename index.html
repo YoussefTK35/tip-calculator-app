@@ -1,61 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Tip calculator app</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
 
-</head>
-<body>
-  <header>
-    <img src="/images/logo.svg">
-  </header>
+    <title>Frontend Mentor | Tip calculator app</title>
 
-  <div class="container">
-    <div class="interactive-container">
-      <label for="bill-input">Bill</label><br>
-      <input type="number" id="bill-input">
-      <img src="/images/icon-dollar.svg" alt="dollar">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <img src="/images/logo.svg" />
+    </header>
 
-      <label for="tip-input">Select Tip %</label>
-      <div class="tips-grid-container">
-        <button class="tip">5%</button>
-        <button class="tip">10%</button>
-        <button class="tip">15%</button>
-        <button class="tip">25%</button>
-        <button class="tip">50%</button>
-        <input type="number" id="tip-input">
-      </div>
-
-      <div class="people-number-container">
-        <label for="num-people-input">Number of People</label>
-        <p class="error-num-people">Can't be zero</p>
-      </div>
-      <input type="number" id="num-people-input">
-      <img src="/images/icon-person.svg">
-    </div>
-
-
-    <div class="results-container">
-      <div class="tip-amount-container">
-        <div>
-          <p class="tip-para">Tip Amount</p>
-          <p>/ person</p>
+    <div class="container">
+      <div class="interactive-container">
+        <label for="bill-input">Bill</label><br />
+        <div class="bill-input-container">
+          <input type="number" id="bill-input" placeholder="0" min="0" />
+          <img src="/images/icon-dollar.svg" alt="dollar" /><br />
         </div>
-        <h1 id="tip-amount">$0.00</h1>
-      </div>
-      <div class="tip-amount-container">
-        <div>
-          <p class="tip-para">Total</p>
-          <p>/ person</p>
+
+        <label for="tip-input">Select Tip %</label>
+        <div class="tips-grid-container">
+          <button>5%</button>
+          <button>10%</button>
+          <button>15%</button>
+          <button>25%</button>
+          <button>50%</button>
+          <input
+            type="number"
+            id="tip-input"
+            placeholder="Custom"
+            min="0"
+          /><br />
         </div>
-        <h1 id="total-amount">$0.00</h1>
+
+        <div class="people-number-container">
+          <label for="num-people-input">Number of People</label>
+          <p class="error-num-people">Can't be zero</p>
+        </div>
+        <div class="people-input-container">
+          <input type="number" id="num-people-input" placeholder="0" min="1" />
+          <img src="/images/icon-person.svg" />
+        </div>
       </div>
-      <button id="reset">RESET</button>
+
+      <div class="results-container">
+        <div class="results-top-container">
+          <div class="tip-amount-container">
+            <div>
+              <p class="tip-para">Tip Amount</p>
+              <p>/ person</p>
+            </div>
+            <h1 id="tip-amount">$0.00</h1>
+          </div>
+          <div class="tip-amount-container">
+            <div>
+              <p class="tip-para">Total</p>
+              <p>/ person</p>
+            </div>
+            <h1 id="total-amount">$0.00</h1>
+          </div>
+        </div>
+        <button id="reset" class="disabled">RESET</button>
+      </div>
     </div>
-  </div>
-</body>
+  </body>
 </html>

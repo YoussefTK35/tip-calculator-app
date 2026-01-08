@@ -1,0 +1,193 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+  gap: 5rem;
+  margin: 0;
+  font-family: "space mono";
+  background-color: hsl(185, 41%, 84%);
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  padding: 2rem;
+  gap: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 1rem 2rem hsl(185, 41%, 84%);
+  max-width: 65rem;
+
+  .interactive-container {
+    position: relative;
+    width: 50%;
+    padding: 2rem;
+
+    label {
+      font-weight: 700;
+      color: hsl(186, 14%, 43%);
+      cursor: pointer;
+    }
+
+    input {
+      width: 100%;
+      padding: 0.5rem 1rem;
+      margin: 1rem 0 2rem 0;
+      border: none;
+      border-radius: 0.2rem;
+      background-color: hsl(189, 47%, 97%);
+      color: hsl(183, 100%, 15%);
+      font-family: "space mono";
+      font-size: 1.5rem;
+      font-weight: 700;
+      text-align: right;
+      cursor: pointer;
+      &::placeholder {
+        color: hsl(184, 14%, 56%);
+      }
+      &::-webkit-inner-spin-button,
+      &::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+    }
+    input:focus {
+      cursor: text;
+      outline: 2px solid hsl(172, 67%, 45%);
+    }
+    .bill-input-container,
+    .people-input-container {
+      position: relative;
+      img {
+        position: absolute;
+        left: 1rem;
+        top: 50%;
+        transform: translateY(-100%);
+      }
+    }
+
+    .people-input-container {
+      input {
+        margin-bottom: 0;
+      }
+      img {
+        transform: translateY(0%);
+      }
+    }
+
+    .tips-grid-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: 1fr 1fr;
+      gap: 1rem;
+      max-width: 45rem;
+      margin-top: 1rem;
+
+      button {
+        background-color: hsl(183, 100%, 15%);
+        color: white;
+        font-family: "space mono";
+        font-size: 1.5rem;
+        font-weight: 700;
+        border: none;
+        border-radius: 0.5rem;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: hsl(172, 67%, 75%);
+        color: hsl(183, 100%, 15%);
+      }
+      button:active {
+        background-color: hsl(172, 67%, 55%);
+      }
+      .active-tip {
+        background-color: hsl(172, 67%, 45%);
+        color: hsl(183, 100%, 15%);
+      }
+
+      input {
+        margin: 0;
+        padding: 0.5rem;
+      }
+    }
+
+    .people-number-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .error-num-people {
+        color: hsl(13, 70%, 59%);
+        font-weight: 700;
+        display: none;
+      }
+    }
+  }
+
+  .results-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 50%;
+    height: 100%;
+    background-color: hsl(183, 100%, 15%);
+    border-radius: 1rem;
+    padding: 3rem;
+
+    .tip-amount-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      h1 {
+        color: hsl(172, 67%, 45%);
+        font-size: 3rem;
+        margin: 0;
+      }
+      .tip-para {
+        color: white;
+        font-size: 1rem;
+        font-weight: 700;
+        margin: 0;
+      }
+      p {
+        color: hsl(184, 14%, 56%);
+        font-size: 0.9rem;
+        font-weight: 700;
+        margin: 0;
+      }
+    }
+    button {
+      width: 100%;
+      padding: 0.5em;
+      background-color: hsl(172, 67%, 45%);
+      color: hsl(183, 100%, 15%);
+      font-family: "space mono";
+      font-size: 1.5rem;
+      font-weight: 700;
+      border: none;
+      border-radius: 0.5rem;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: hsl(172, 67%, 75%);
+    }
+    button:active {
+      background-color: hsl(172, 67%, 55%);
+    }
+    .disabled {
+      background-color: hsl(183, 100%, 20%);
+      cursor: not-allowed;
+    }
+    .disabled:hover {
+      background-color: hsl(183, 100%, 20%);
+    }
+    .disabled:active {
+      background-color: hsl(183, 100%, 20%);
+    }
+  }
+}
